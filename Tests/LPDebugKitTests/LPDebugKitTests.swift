@@ -9,7 +9,7 @@ import XCTest
 import LPDebugKitMacros
 
 let testMacros: [String: Macro.Type] = [
-    "stringify": StringifyMacro.self,
+    "debug": DebugMacro.self,
 ]
 #endif
 
@@ -18,7 +18,7 @@ final class LPDebugKitTests: XCTestCase {
         #if canImport(LPDebugKitMacros)
         assertMacroExpansion(
             """
-            #stringify(a + b)
+            #debug(a + b, a, b)
             """,
             expandedSource: """
             (a + b, "a + b")

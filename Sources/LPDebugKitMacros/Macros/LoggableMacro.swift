@@ -18,9 +18,9 @@ extension LoggableMacro {
         let subsystem = node.arguments.value(for: "subsystem")?.text ?? "DebugLog"
         let category = node.arguments.value(for: "category")?.text ?? ""
         let logArgments = node.arguments.filter({ $0.label == nil })
-        let messages = logArgments.map(\.expression)
+        let messages = logArgments.map { "\\(" + $0.expression.description + ")" }.joined(separator: " ")
         return """
-        Logger(subsystem: "\(raw: subsystem)", category: "\(raw: category)").\(raw: level.rawValue)(\(logArgments))
+        Logger(subsystem: "\(raw: subsystem)", category: "\(raw: category)").\(raw: level.rawValue)("\(raw: messages)")
         """
     }
 }
