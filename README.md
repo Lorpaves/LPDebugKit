@@ -44,5 +44,5 @@ import LPDebugKit
 ---
 
 ```
-   .package(url: "git@github.com:Lorpaves/LPDebugKit.git", from: "1.0.0"),
+.package(url: "https://github.com/Lorpaves/LPDebugKit.git", from: "1.0.0"),
 ```
