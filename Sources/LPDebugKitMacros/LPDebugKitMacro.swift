@@ -13,6 +13,6 @@ struct LPDebugKitPlugin: CompilerPlugin {
         NoticeMacro.self,
         ErrorMacro.self,
         FaultMacro.self,
-        CriticalMacro.self,
+        CriticalMacro.self
     ]
 }

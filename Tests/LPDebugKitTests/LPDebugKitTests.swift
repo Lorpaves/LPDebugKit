@@ -18,7 +18,8 @@ final class LPDebugKitTests: XCTestCase {
         #if canImport(LPDebugKitMacros)
         assertMacroExpansion(
             """
-            #debug(a + b, a, b)
+            @Loggable
+            extension Model {}
             """,
             expandedSource: """
             (a + b, "a + b")

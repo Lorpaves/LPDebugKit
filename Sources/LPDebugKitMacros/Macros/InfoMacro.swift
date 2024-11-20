@@ -5,12 +5,11 @@
 //  Created by Lorpaves on 2024/11/2.
 //
 
-import SwiftCompilerPlugin
 import SwiftSyntax
 import SwiftSyntaxMacros
 
 
-public struct InfoMacro: ExpressionMacro, LoggableMacro {
+public enum InfoMacro: ExpressionMacro, LoggableMacro {
     static let level: LogLevel = .info
     public static func expansion(
         of node: some FreestandingMacroExpansionSyntax,
